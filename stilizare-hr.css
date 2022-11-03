@@ -1,0 +1,20 @@
+.hr1
+{		display: block;
+        height: 45px;
+        margin-top: -20px;
+        border-style: solid;
+        border-color: var(--culoare_albastru);
+        border-width: 0 0 1px 0;
+        border-radius: 20px;
+}
+
+
+.hr2
+{		display: block;
+        height: 45px;
+        margin-top: -13px;
+        border-style: solid;
+        border-color: var(--culoare_albastru);
+        border-width: 1px 0 0 0;
+        border-radius: 20px;
+}

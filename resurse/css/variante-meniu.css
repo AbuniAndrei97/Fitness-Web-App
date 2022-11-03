@@ -1,0 +1,134 @@
+body{
+    --inaltime-meniu:3rem;
+}
+
+nav ul.meniu ul{
+    display: none;
+    position:absolute;
+    width:100%;
+    background: var(--culoare-albastru-deschis-2);
+
+
+
+}
+nav{
+    width:100%;
+    background: var(--culoare-albastru-deschis-2);
+}
+nav ul.meniu>li{
+    float:left;
+    width:100px;
+    position:relative;
+}
+
+nav ul, nav li{
+    padding:0;
+    margin:0;
+}
+nav ul.meniu li{
+    text-align:center;
+    list-style-type: none;
+    cursor:pointer;
+}
+nav ul.meniu li a, nav ul.meniu li div{
+    text-decoration: none;
+    color:black;
+    background: var(--culoare-albastru-deschis-1);
+    display: block;
+    font-weight:bold;
+    line-height:50px;
+    outline:1px solid black;
+}
+
+
+
+nav ul.meniu>li:hover>ul{
+    display:block;
+}
+
+
+
+
+
+nav ul.meniu>li>ul{
+    display: block;
+    transform: scale(0);
+}
+nav ul.meniu>li:hover>ul{
+    display: block;
+    transform: scale(1);
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+}
+nav ul.meniu li.bara :hover::before {
+    display: block;
+    bottom: 0px;
+    opacity: 1;
+
+}
+
+nav ul.meniu li.bara ::before {
+    content: "";
+    width: 100%;
+    height: 5px;
+    background: linear-gradient( var(--culoare-albastru-inchis), black, var(--culoare-mov));
+    position: absolute;
+    left: 0;
+    transition: all 0.5s linear;
+    bottom: 100%;
+    opacity: 0;
+}
+
+nav ul.meniu>li>ul a:hover{
+
+
+    background-color: var(--culoare-mov);
+    transition: all 0.6s linear;
+}
+
+
+
+#hamburger{
+    display: none;
+    height: 3rem;
+}
+#ch-menu{
+    display: none;
+}
+#hamburger img{
+    height:100%;
+    width:auto;
+  }
+
+@media screen and (max-width: 500px)
+{
+ 
+
+
+#hamburger{
+    display:block;
+}
+
+ul.meniu{
+    display:none;
+    position:absolute;
+    width:100%;
+    border-right: 10px;
+    background:var(--culoare-mov);
+   /*clip-path: circle(80% at 0% 0%);
+    transition: clip-path 0.5s ease-in-out;*/
+
+}
+
+
+#ch-menu:checked+ul.meniu{
+    display: block;
+}
+
+
+nav ul.meniu li{
+    width:100%;
+}
+
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta name="description" content="Sala de fitness lista de servicii">
+  <meta name="keywords" content="sala, fitness, servicii, program">
+	<title>Sala de Fitness - Produse</title>
+	<%- include("../fragmente/head") %>
+
+
+</head>
+
+<body>
+<%- include("../fragmente/header") %>
+<br><br><br><br><br><br><br><br>
+
+
+<main>
+	<section>
+		<h2>Produse</h2>
+		
+		<article class="produs">
+			<h3><span class="nume"><%- locals.prod.nume %></span></h3>
+			<p>Nume: <span class="nume"><%- locals.prod.nume %> </span></p>
+			<p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
+			<p>preparat_deja: <span class="preparat_deja"><%- locals.prod.preparat_deja %> </span></p>
+			<p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+			<p>Calorii: <span class="calorii"><%- locals.prod.calorii %> </span></p>
+			<p>Gramaj: <span class="gramaj"><%- locals.prod.gramaj %> </span></p>
+			<p>ingrediente: <span class="ingrediente"><%- locals.prod.ingrediente %> </span></p>
+			<figure class="imag-produs">
+                 <img  src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]/>
+            </figure>  
+		</article>
+		
+	</section>
+</main>
+
+<%- include("../fragmente/footer") %>
+
+<div id="banner"><p>Vine trenulețul.</p></div>
+	<a href="#top" title="hai sus frate" id="link-top"><div id="triunghi">&#9650;</div></a>
+
+</body>
+
+</html>

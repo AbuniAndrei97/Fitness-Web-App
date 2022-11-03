@@ -1,0 +1,186 @@
+#grid-pagina section{
+	outline:1px solid var(--culoare-albastru);
+	padding:1rem;
+}
+
+
+
+
+#grid-pagina
+{
+	display: grid;
+	grid-template-areas: "x1 x1 x1 x1"
+						 "x2 x2 x3 x3"
+						 "x2 x2 x4 x4"
+						 "x5 x6 x6 x7"
+						 "x8 x8 x8 x8";
+	grid-gap: 10px;
+	padding: 10px;
+	grid-gap:2rem;
+}
+
+
+html{
+	background-color:var(--culoare-albastru-super-deschis);;
+}
+
+#x1{
+	grid-area: x1;
+	background-color: var(--culoare-albastru-deschis-2);
+}
+
+#x2{
+	grid-area: x2;
+	background-color: var(--culoare-albastru-deschis-2);
+}
+
+#x3{
+	grid-area: x3;
+	background-color: var(--culoare-albastru-deschis-2);
+}
+
+#x4{
+	grid-area: x4;
+	background-color: var(--culoare-albastru-deschis-2);
+}
+
+#x5{
+	grid-area: x5;
+	background-color: var(--culoare-albastru-deschis-2);
+}
+
+#x6{
+	grid-area: x6;
+	background-color: var(--culoare-albastru-deschis-2);
+}
+
+#x7{
+	grid-area: x7;
+	background-color: var(--culoare-albastru-deschis-2);
+}
+
+#x8{ 
+	grid-area: x8;
+	background-color: var(--culoare-albastru-deschis-2);
+}
+
+
+#tab-program td, #tab-program th{
+    border:1px solid var(--culoare-albastru);
+}
+#tab-program{
+    border-collapse:collapse;
+    margin:auto;
+}
+
+
+
+
+#table {
+	text-align: center;
+	border-spacing: 1px;
+	padding: 5px;
+	border: solid 2px var(--culoare-albastru);
+}
+
+#table tfoot td{
+	border:none;
+	font-weight: bold;
+	text-align: center;
+}
+
+
+
+tbody tr:nth-child(odd){
+	background-color: var(--culoare-albastru-deschis-2);
+}
+
+
+tbody tr:nth-child(even){
+	background-color:var(--culoare-albastru-super-deschis);
+}
+
+
+
+tbody tr:hover{
+	background-color: var(--culoare-albastru-inchis);
+}
+
+@media screen and (max-width: 500px)
+{
+   #tabel-mic {
+  overflow-x: scroll;
+
+}
+table {
+  width: 121%;
+  counter-reset: mycounter;
+
+}
+
+#grid-pagina{
+	display:block;
+}
+
+#banner{
+	display:none;
+}
+
+html{
+	font-size: 11px;
+}
+
+
+
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1200px)
+{
+
+#banner{
+	display:none;
+}
+
+#grid-pagina{
+	grid-template-areas: "x1 x1"
+						 "x2 x2"
+						 "x3 x3"
+						 "x4 x4"
+						 "x5 x5"
+						 "x6 x6"
+						 "x7 x7"
+						 "x8 x8";
+
+
+	display:grid;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+table tr {
+  counter-increment: row-num;
+}
+table tr td:first-child::before {
+    content: counter(row-num) ". ";
+}
+
+
+
+
+

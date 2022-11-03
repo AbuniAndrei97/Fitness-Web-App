@@ -1,0 +1,28 @@
+.grid-produse{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:1rem;
+    font-size: 20px;
+}
+.coloana1{
+    padding-left: 10px;
+}
+.coloana2{
+    padding-top: 90px;
+}
+.coloana1 img{
+    float: right;
+}
+
+.coloana2 p{
+    text-align: center;
+}
+
+.coloana1 b{
+    color:var(--culoare-mov);
+}
+
+.grid-produse .coloana1, .coloana2{
+    border: 2px solid;
+    border-radius: 7px;
+}

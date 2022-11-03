@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta name="description" content="Sala de fitness lista de servicii">
+  <meta name="keywords" content="sala, fitness, servicii, program">
+	<title>Sala de Fitness - Produse</title>
+	<%- include("../fragmente/head") %>
+
+
+</head>
+
+<body>
+<%- include("../fragmente/header") %>
+<br><br><br><br><br><br><br><br>
+
+
+<main>
+        <label>Cauta: <input type="text" id="text" value=""></label><button id="text">Filtreaza</button>
+        <label>Pret: 4<input type="range" id="pret" value="0" min="4"  max="30-"></label>60
+        <p>Flitreaza tipul produsului:</p>
+       	<input type="radio" id="radio1" name="radio" value="radio1">
+ 		<label for="age1">mancare</label><br>
+  		<input type="radio" id="radio2" name="radio" value="radio2">
+  		<label for="age2">bautura</label><br>  
+  		<input type="radio" id="radio3" name="radio" value="radio3">
+  		<label for="age3">accesorii</label>
+        <p>Filtreaza checkbox:</p>
+        <p>preparat_deja: <input type="checkbox" id="checkbox1" name="checkbox1" value="checkbox1"></p>
+        <p>calorii>100:<input type="checkbox" id="checkbox2" name="checkbox2" value="checkbox2"></p>
+        <label for="textt">Textarea:</label>
+			<textarea id="textarea" name="textarea"></textarea><button id="textarea">Filtreaza</button>	
+		<p><label for="select">Filtrare:</label>
+  			<select name="select" id="select">
+    			<option value="nimic">nimic</option>
+    			<option value="optiune1">optiune1</option>
+    			<option value="optiune2">optiune2</option>
+    			<option value="optiune3">optiune3</option>
+  		</select>
+  		<p><select name="select2" id="select2" multiple>
+    		<option value="optiune1">optiune1</option>
+    		<option value="optiune2">optiune2</option>
+    		<option value="optiune3">optiune3</option>
+  		</select></p>
+
+
+
+
+
+
+  		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="myUL">
+  <li><a href="#">Adele</a></li>
+  <li><a href="#">Agnes</a></li>
+
+  <li><a href="#">Billy</a></li>
+  <li><a href="#">Bob</a></li>
+
+  <li><a href="#">Calvin</a></li>
+  <li><a href="#">Christina</a></li>
+  <li><a href="#">Cindy</a></li>
+</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+
+
+
+	<section id="produse">
+		<h2>Produse</h2>
+		<div class="grid-produse">
+		<% for( let prod of locals.produse) { %>
+		<article class="coloana1">
+			<img src="/resurse/imagini/produse/<%- prod.imagine%>" alt="imagine produs"/>
+			<p class="nume"><b>Nume:</b> <a href="/produs/<%- prod.id %>" ><span><%- prod.nume%></span></a></p>
+			<p class="pret"><b>Pret: </b><span><%- prod.pret%></span> lei</p>
+			<p class="categorie"><b>Categorie: </b><span><%- prod.categorie%></span></p>
+			<p class="ingrediente"><b>Ingrediente: </b><span><%- prod.ingrediente%></span></p>
+			<p class="preparat_deja">
+				<% if(prod.preparat_deja){%>
+				<b>Produsul este deja preparat</b>
+				<%} else {%>
+				<b>Produsul nu este deja preparat</b>
+				<% }%></p>
+			<%var luna=["Ianuarie","Februarie","Martie","Aprilie","Mai","Iunie","Iulie","August","Septembrie","Octombrie","Noiembrie","Decembrie"]%>
+                <%var zi=["Luni","Marti","Miercuri","Joi","Vineri","Sambata","Duminica"]%>
+                <p class="data_adaugare"><time><b>Data adaugare produs: </b><span><%- zi[(prod.data_adaugare).getDate()%7];%> <%- (prod.data_adaugare).getDate();  %> <%- luna[(prod.data_adaugare).getMonth()];  %> <%- (prod.data_adaugare).getYear()+1900;%> </span></p></time>
+		</article>
+				<article class="coloana2">
+			<p class="scop"><b>Scop: </b><span><%- prod.scop%></span></p>
+        	<p class="descriere"><b>Descriere: </b><span><%- prod.descriere%></span></p>
+        </article>
+		<% }%>
+		</div>
+	</section>
+</main>
+
+<%- include("../fragmente/footer") %>
+
+<div id="banner"><p>Vine trenulețul.</p></div>
+	<a href="#top" title="hai sus frate" id="link-top"><div id="triunghi">&#9650;</div></a>
+
+</body>
+
+</html>

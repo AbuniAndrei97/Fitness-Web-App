@@ -1,0 +1,90 @@
+#watermark{
+	display: none;
+}
+
+@media print{
+
+	#banner{
+		position: absolute;
+		width: 50%;
+		border: 3px double black;
+		left: 96%;
+		top: 0;
+	}
+
+	iframe, video, #galerie-statica, .stilizare-taburi, #link-top{
+		display: none;
+	}
+
+	a{
+		text-decoration: none;
+	}
+
+	.meniu{
+		margin-left: 4rem;
+		display: block;
+		page-break-after: always;
+
+	}
+
+	nav ul.meniu>li{
+		display: block;
+		overflow: visible;
+		float: none;
+		height: auto;
+		list-style-type: circle;
+		margin-left: 4rem;
+	}
+
+
+	nav ul.meniu ul{
+    display:block;
+    position: static;
+    height: auto;
+    margin-left: 4rem;
+	}
+
+	nav ul.meniu>li>ul{
+	transform: scale(1);
+	margin-left: 4rem;
+	list-style-type: circle;
+	}
+
+
+	h1{
+		text-align: center;
+	}
+
+	footer{
+		page-break-before: always;
+	}
+
+	#watermark{
+		display: block;
+		position: fixed;
+		bottom:0%;
+		right:35%;
+		text-align: center;
+	}
+
+	#watermark::after{
+		opacity: 0.3;
+		display: block;
+		background: white;
+		width: 60%;
+		height: 10%;
+		content: "Abuni Andrei";
+	}
+
+	@page:left{
+		margin-left: 2cm;
+		margin-right: 1cm;
+	}
+
+	@page:right{
+	margin-left: 1cm;
+	margin-right: 2cm;
+	}
+
+
+}
